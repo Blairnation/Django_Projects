@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<br><br>
+
+<div class="box-element" style="width: 80%;">
+  <h3>REGISTER</h3>
+  <br>
+  <form action="" method="post">
+    {% csrf_token %}
+        <div class="login-field">
+            <input required class="form-control"  type="text" name="username" placeholder="Username...">
+      </div>
+
+      <div class="login-field">
+          <input required class="form-control"  type="email" name="email" placeholder="Email...">
+      </div>
+
+      <div class="login-field">
+          <input required class="form-control"  type="password" name="password" placeholder="Password...">
+      </div>
+
+      <div class="login-field">
+        <input required class="form-control"  type="password" name="password2" placeholder="Re-Enter Password...">
+      </div>
+
+      <div class="login-field">
+         <input id="form-button" class="btn btn-success btn-block" type="submit" value="Register">
+      </div>
+  </form>
+  <br>
+  <hr>
+  <div>
+    <p><strong>Already have an account.Login <a href="{% url 'login' %}">here</a></strong></p>
+  </div>
+</div>
+{% endblock %}

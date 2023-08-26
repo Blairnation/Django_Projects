@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="loginpage">
+    <div class="box-element"  style="width: 60%;">
+      <h3>Login</h3>
+      <br>
+      <form action="" method="post">
+         {% csrf_token %}
+            <div class="login-field">
+                <input required class="form-control"  type="text" name="username" placeholder="Username...">
+          </div>
+
+          <div class="login-field">
+              <input required class="form-control"  type="password" name="password" placeholder="Password...">
+          </div>
+
+          <div class="login-field">
+            <input id="form-button" class="btn btn-success btn-block" type="submit" value="Login">
+          </div>
+      </form>
+      <br>
+      <hr>
+      <div>
+        <p><strong>Don't have an account.<a href="{% url 'register' %}">Register</a></strong></p>
+      </div>
+    </div>
+</div>  
+{% endblock %}
